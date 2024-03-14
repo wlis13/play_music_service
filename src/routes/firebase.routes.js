@@ -6,7 +6,8 @@ const {
 const multer = require("multer")
 
 const Multer = multer({
-  storage: multer.memoryStorage()
+  storage: multer.memoryStorage(),
+  limits: { fileSize: 4.5 * 1024 * 1024 }
 });
 
 const urlsRouter = Router();

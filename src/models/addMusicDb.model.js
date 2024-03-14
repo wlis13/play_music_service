@@ -3,7 +3,8 @@ const mongoose = require("mongoose");
 const schemaMusic = new mongoose.Schema({
   title: String,
   image: String,
-  music: String,
+  music: mongoose.Schema.Types.Mixed,
+  musicUrl: String,
   category: String,
   description: String
 });

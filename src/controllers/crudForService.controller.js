@@ -30,7 +30,7 @@ async function addMusicController(req, res) {
   try {
     const newMusic = req.body;
     const responseAddMusic = await addMusicService(newMusic);
-    res.status(202).json({ message: `${responseAddMusic}` })
+    res.status(202).json({ message: responseAddMusic })
   } catch (error) {
     res.status(500).json({ message: `Erro ao adicionar música: ${error}` })
   }
@@ -41,7 +41,7 @@ async function removeMusicsController(_req, res) {
     const responseRemoveMusic = await removeAllService();
     res.status(204).json({ message: `${responseRemoveMusic}` });
   } catch (error) {
-    res.status(500).json({ message: `Erro ao adicionar música: ${error}` })
+    res.status(500).json({ message: `Erro ao remover música: ${error}` })
   }
 }
 
