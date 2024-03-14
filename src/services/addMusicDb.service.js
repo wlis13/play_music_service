@@ -16,7 +16,7 @@ async function updateMusicService(id, updateValue) {
 }
 
 async function addMusicService(newMusic) {
-  await Music.insertOne(newMusic);
+  await Music.insertMany(newMusic);
   return `Musica ${newMusic.title} foi adicionada com sucesso!`
 }
 
