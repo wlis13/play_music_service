@@ -23,21 +23,6 @@ admin.initializeApp({
 
 const BUCKET = admin.storage().bucket();
 
-// async function getAllMusicsController(_req, res) {
-//   try {
-//     const storageRef = ref(storage, "all_musics")
-//     const list = await listAll(storageRef)
-//     const urls = []
-//     for (const itemRef of list.items) {
-//       const url = await getDownloadURL(itemRef)
-//       urls.push(url)
-//     }
-//     res.status(200).json(urls)
-//   } catch (error) {
-//     res.status(500).json({ message: `Erro ao resgatar todas as músicas: ${error}` })
-//   }
-// };
-
 async function imageUploadController(req, res, next) {
   try {
     if (!req.file) return next();
