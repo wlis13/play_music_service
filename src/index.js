@@ -12,8 +12,8 @@ const dbPassword = process.env.DBPASSWORD;
 
 const app = express();
 app.use(cors({ origin: 'http://localhost:5173' }));
-app.use(bodyParser.json({ limit: '50mb' }));
-app.use(bodyParser.urlencoded({ limit: '50mb', extended: true }));
+app.use(bodyParser.json({ limit: '500mb' }));
+app.use(bodyParser.urlencoded({ limit: '500mb', extended: true }));
 app.use(express.json());
 
 app.use("/", urlsRouter);

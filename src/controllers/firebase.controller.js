@@ -39,7 +39,7 @@ async function imageUploadController(req, res, next) {
       await file.makePublic();
       req.file.firebaseUrl = `https://storage.googleapis.com/${bucket}/${image.originalname}`;
 
-      res.status(200).json({ url: req.file.firebaseUrl })
+      res.status(202).json({ url: req.file.firebaseUrl })
     });
     stream.end(image.buffer)
 
@@ -64,7 +64,7 @@ async function musicUploadController(req, res, next) {
       await file.makePublic();
       req.file.firebaseUrl = `https://storage.googleapis.com/${bucket}/${music.originalname}`;
 
-      res.status(200).json({ url: req.file.firebaseUrl })
+      res.status(202).json({ url: req.file.firebaseUrl })
     });
     stream.end(music.buffer)
 
