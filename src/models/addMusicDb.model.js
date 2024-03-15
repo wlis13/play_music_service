@@ -5,7 +5,8 @@ const schemaMusic = new mongoose.Schema({
   image: String,
   music: String,
   category: String,
-  description: String
+  description: String,
+  like: { type: Boolean, default: false }
 });
 
 const Music = mongoose.model("Music", schemaMusic);
