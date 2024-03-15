@@ -6,24 +6,12 @@ const urlsRouter = require("./routes/firebase.routes");
 const musicRoutes = require("./routes/crudRoutes.routes");
 require("dotenv").config()
 
-const whiteList = 'http://localhost:5173';
-
-const corsOptions = {
-  origin: function (origin, callback) {
-    if (whiteList.indexOf(origin) !== -1) {
-      callback(null, true);
-    } else {
-      callback(new Error("Not allowed by CORS!"));
-    }
-  }
-}
-
 const port = process.env.PORT;
 const dbUser = process.env.DBUSER;
 const dbPassword = process.env.DBPASSWORD;
 
 const app = express();
-app.use(cors(corsOptions));
+app.use(cors('http://localhost:5173'));
 app.use(bodyParser.json({ limit: '10mb' }));
 app.use(bodyParser.urlencoded({ limit: '10mb' }));
 app.use(express.json());
