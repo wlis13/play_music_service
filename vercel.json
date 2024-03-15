@@ -11,11 +11,11 @@
     {
       "src": "/(.*)",
       "dest": "src/index.js",
+      "Methods": [
+        "GET, POST, PUT, DELETE, OPTIONS, PATCH, OPTIONS"
+      ],
       "headers": {
-        "Access-Control-Allow-Credentials": "true",
-        "Access-Control-Allow-Origin": "http://localhost:5173/",
-        "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS",
-        "Access-Control-Allow-Headers": "Origin, X-Requested-With, Content-Type, Accept"
+        "Access-Control-Allow-Origin": "*"
       }
     }
   ]
