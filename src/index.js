@@ -6,7 +6,7 @@ const urlsRouter = require("./routes/firebase.routes");
 const musicRoutes = require("./routes/crudRoutes.routes");
 require("dotenv").config()
 
-const whiteList = 'http://localhost:5174';
+const whiteList = ['http://localhost:5174', 'http://localhost:5173'];
 
 const corsOptions = {
   origin: function (origin, callback) {
