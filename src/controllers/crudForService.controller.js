@@ -45,7 +45,7 @@ async function updateMusicController(req, res) {
     const updatedMusic = await updateMusicService(_id, musicUpdate);
     res.status(202).json({ message: updatedMusic })
   } catch (error) {
-    res.status(500).json({ message: `Erro ao adicionar música: ${error}` });
+    res.status(500).json({ message: `Erro ao atualizar música: ${error}` });
   }
 }
 
