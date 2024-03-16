@@ -40,7 +40,8 @@ async function addMusicController(req, res) {
 async function updateMusicController(req, res) {
   try {
     const musicUpdate = req.body;
-    const { _id } = musicUpdate
+    const getMusics = await GetAllMusicService();
+    const { _id } = getMusics.find((music) => music.title === musicUpdate.title);
     const updatedMusic = await updateMusicService(_id, musicUpdate);
     res.status(202).json({ message: updatedMusic })
   } catch (error) {
