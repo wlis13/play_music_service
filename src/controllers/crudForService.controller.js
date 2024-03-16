@@ -3,6 +3,7 @@ const {
   GetAllMusicService,
   getOneMusicService,
   removeAllService,
+  updateMusicService,
 } = require("../services/addMusicDb.service");
 
 async function getMusicsController(_req, res) {
@@ -36,6 +37,17 @@ async function addMusicController(req, res) {
   }
 };
 
+async function updateMusicController(req, res) {
+  try {
+    const musicUpdate = req.body;
+    const { _id } = musicUpdate
+    const updatedMusic = await updateMusicService(_id, musicUpdate);
+    res.status(202).json({ message: updatedMusic })
+  } catch (error) {
+    res.status(500).json({ message: `Erro ao adicionar música: ${error}` });
+  }
+}
+
 async function removeMusicsController(_req, res) {
   try {
     const responseRemoveMusic = await removeAllService();
@@ -51,4 +63,5 @@ module.exports = {
   getMusicsController,
   getOneMusicController,
   removeMusicsController,
+  updateMusicController,
 }
