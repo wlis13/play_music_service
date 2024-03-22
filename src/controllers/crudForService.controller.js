@@ -40,9 +40,8 @@ async function addMusicController(req, res) {
 async function updateMusicController(req, res) {
   try {
     const musicUpdate = req.body;
-    const getMusics = await GetAllMusicService();
-    const { _id } = getMusics.find((music) => music.title === musicUpdate.title);
-    const updatedMusic = await updateMusicService(_id, musicUpdate);
+    const { id } = musicUpdate;
+    const updatedMusic = await updateMusicService(id, musicUpdate);
     res.status(202).json({ message: updatedMusic })
   } catch (error) {
     res.status(500).json({ message: `Erro ao atualizar música: ${error}` });
